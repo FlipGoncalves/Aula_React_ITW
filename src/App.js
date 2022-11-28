@@ -3,7 +3,7 @@ import './App.css';
 
 // my components
 import NavbarITW from './components/navbar';
-import Athletetable from './components/atheletable';
+import Gamestable from './components/gamestable';
 
 // bootstrap
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +17,9 @@ function App() {
       </head> 
       <NavbarITW />
       <br /><br />
-      <Athletetable />
+      <div align="center">
+        <Gamestable />
+      </div>
     </div>
   );
 }

@@ -1,39 +1,52 @@
 import Table from 'react-bootstrap/Table';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function Athletetable() {
 
     const [data, setData] = useState([]);
 
-    const getData = () => {
-        var temp = [];
-        [[1, "Mark", "Otto", "@mdo"], [1, "Mark", "Otto", "@mdo"], [1, "Mark", "Otto", "@mdo"]].forEach((element) => {
-            temp.push(<tr>
-                <td>{element[0]}</td>
-                <td>{element[1]}</td>
-                <td>{element[2]}</td>
-                <td>{element[3]}</td>
-            </tr>)
-        });
-        setData(temp);
-        console.log(data);
+    function getData() {
+
+        let resp = fetch('http://192.168.160.58/Olympics/api/Games', {
+          method: 'GET'
+        }).then((dados)=>{
+          dados.json().then((properties) => {
+        
+            var temp = [];
+            properties["Records"].forEach((element) => {
+              temp.push(<tr>
+                  <td>{element["Name"]}</td>
+                  <td>{element["CityName"]}</td>
+                  <td>{element["CountryName"]}</td>
+                  <td>{element["Year"]}</td>
+              </tr>)
+            });
+
+            setData(temp);
+
+          })
+        }).catch((error) => {
+          console.log("error")
+        })
     }
 
+  useEffect(() => {
+    getData()
+  }, [])
 
   return (
     <Table striped bordered hover>
       <thead>
         <tr>
-          <th>#</th>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Username</th>
+          <th>Nome dos Jogos</th>
+          <th>Cidade</th>
+          <th>País</th>
+          <th>Ano</th>
         </tr>
       </thead>
       <tbody>
         {data}
       </tbody>
-      <button onClick={getData}>Click me</button>
     </Table>
   );
 }
