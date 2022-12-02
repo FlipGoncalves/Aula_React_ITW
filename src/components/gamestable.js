@@ -1,5 +1,6 @@
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import React, { useState, useEffect } from 'react';
 import ModalComponent from './modalcomponent';
 
@@ -18,7 +19,7 @@ function Athletetable() {
           method: 'GET'
         }).then((dados)=>{
           dados.json().then((properties) => {
-        
+
             console.log(properties)
             var temp = [];
             properties["Records"].forEach((element) => {
@@ -51,8 +52,8 @@ function Athletetable() {
   }, [])
 
   return (
-    <div>
-        <Table striped bordered hover style={{width: '80%'}}>
+    <Container>
+        <Table striped bordered hover style={{width: '100%', margin:'5px'}}>
             <thead style={{backgroundColor: 'grey', color: "white"}}>
                 <tr>
                 <th>Nome dos Jogos</th>
@@ -67,7 +68,7 @@ function Athletetable() {
             </tbody>
         </Table>
         {modal.show && modal.id && <ModalComponent closeModal={handleClose} data={modal.id} type={modal.type} />}
-    </div>
+    </Container>
   );
 }
 
