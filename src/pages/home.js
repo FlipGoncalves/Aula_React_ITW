@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import CarrocaL from '../components/carrossel';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
@@ -11,6 +11,26 @@ import './home.css'
 import Button from 'react-bootstrap/Button';
 
 function Home(){
+
+	const [card1, setCard1] = useState("false");
+	const [card2, setCard2] = useState("false");
+	const [time, setTime] = useState(0);
+
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setTime(prevTime => prevTime + 1)
+		}, 500);
+	  }, []);
+
+	useEffect(() => {
+		if (card1 === "false") {
+			if (time > 0)
+				setCard1("true")
+			} else {
+			setCard2("true")
+		}
+	}, [time]);
+
     return(
         <Container fluid>
 			<Row >
@@ -21,31 +41,14 @@ function Home(){
 				<Container style={{marginTop: "30px"}}>
 					<Row className="justify-content-md-center">
 						<Col xs lg="2">
-							<AthleteCard id="1"/>
+							<AthleteCard id="94406"/>
 						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-					</Row>
-					<Row className="justify-content-md-center" style={{marginTop: "20px"}}>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
-						<Col xs lg="2">
-							<AthleteCard />
-						</Col>
+						{card1 === "true" && <Col xs lg="2">
+							<AthleteCard id="87390"/>
+						</Col>}
+						{card2 === "true" && <Col xs lg="2">
+							<AthleteCard id="13386"/>
+						</Col>}
 					</Row>
 				</Container>
 				<div align="center" style={{marginTop: "20px"}}>

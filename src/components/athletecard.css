@@ -1,3 +1,4 @@
 .card-img {
-    object-fit: cover; 
+    object-fit: fill;
+    max-width: 300px;
 }
