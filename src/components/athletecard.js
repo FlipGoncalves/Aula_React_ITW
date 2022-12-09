@@ -48,11 +48,11 @@ function AthleteCard(props) {
       <Card.Body>
         <Card.Title align="center">{data["Name"]}</Card.Title>
         <Card.Text>
-          <p>Date of birth: {data["BornDate"]}</p>
-          <p>Born in: {data["BornPlace"]}</p>
-          <p>Height: {data["Height"]}</p>
-          <p>Weight: {data["Weight"]}</p>
-          <p>Sex: {data["Sex"]} </p>
+          <p>Data de Nascimento: {data["BornDate"]}</p>
+          <p>Nascido em: {data["BornPlace"]}</p>
+          <p>Altura: {data["Height"]}</p>
+          <p>Peso: {data["Weight"]}</p>
+          <p>Sexo: {data["Sex"]} </p>
         </Card.Text>
       </Card.Body>
     </Card>

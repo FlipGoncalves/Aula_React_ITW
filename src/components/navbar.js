@@ -20,7 +20,9 @@ function NavbarITW() {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                     </NavDropdown> */}
-                    <Nav.Link href="/login" style={{float: "right"}}><i class="fa-solid fa-user"></i></Nav.Link>
+                </Nav>
+                <Nav className="ms-auto">
+                    <Nav.Link href="" style={{float: "right"}}><i class="fa-solid fa-user"></i></Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Container>

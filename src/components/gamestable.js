@@ -2,9 +2,9 @@ import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import React, { useState, useEffect } from 'react';
-import ModalComponent from './modalcomponent';
+import ModalGames from './modalgames';
 
-function Athletetable() {
+function Gamestable() {
 
     const [data, setData] = useState([]);
     const [modal, setModal] = useState({ show: false, id: null, type: "" });
@@ -67,9 +67,9 @@ function Athletetable() {
                 {data}
             </tbody>
         </Table>
-        {modal.show && modal.id && <ModalComponent closeModal={handleClose} data={modal.id} type={modal.type} />}
+        {modal.show && modal.id && <ModalGames closeModal={handleClose} data={modal.id} type={modal.type} />}
     </Container>
   );
 }
 
-export default Athletetable;
+export default Gamestable;

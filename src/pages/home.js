@@ -37,7 +37,7 @@ function Home(){
 				<CarrocaL />
 			</Row>
 			<Row style={{marginTop: "150px"}}>
-				<h1 align="center">Featured Athletes</h1>
+				<h1 align="center">Atletas Realçados</h1>
 				<Container style={{marginTop: "30px"}}>
 					<Row className="justify-content-md-center">
 						<Col xs lg="2">
@@ -60,10 +60,10 @@ function Home(){
 					<img src={logo} style={{width: "400px"}} />
 				</Col>
 				<Col xs lg="3">
-					<h1 style={{fontSize: 100}}>Next Games</h1>
+					<h1 style={{fontSize: 100}}>Próximos Jogos</h1>
 				</Col>
 			</Row>
-			<Row className="justify-content-md-center align-items-center" style={{verticalAlign: "middle", marginBottom: "150px"}}>
+			<Row className="justify-content-md-center align-items-center" style={{verticalAlign: "middle", paddingBottom: "150px"}}>
 				<Col xs lg="12" align="center">
 					<div style={{backgroundColor: "black"}} className="cont">
 						<img src={og2024} className="image"/>
