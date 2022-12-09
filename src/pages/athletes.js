@@ -1,10 +1,16 @@
 import React from 'react';
-import Gamestable from '../components/gamestable';
+import Athletetable from '../components/atheletable';
+import { MDBInput, MDBCol, MDBContainer } from "mdbreact";
 
 function Athletes(){
     return(
         <div>
-            <h1>Athletes Page, Olypics bejiling!</h1>
+            <MDBContainer>
+                <MDBCol md="12">
+                    <MDBInput hint="Search" type="text" containerClass="mt-0" />
+                </MDBCol>
+            </MDBContainer>
+            <Athletetable />
         </div>
     )
 }
